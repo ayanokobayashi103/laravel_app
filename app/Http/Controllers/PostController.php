@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Post;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
 class PostController extends Controller
 {
     /**
@@ -36,14 +39,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post();
-        $post->title = $request->input('tilte');
-        $post->save();
+      $id = Auth::id();
+    //インスタンス作成
+    $post = new Post();
 
-        return view('post')->with(
-          'status',
-          $post->title . '登録しました'
-        );
+    $post->title = $request->title;
+    
+
+    $post->save();
+
+   return redirect()->to('/posts');
     }
 
     /**

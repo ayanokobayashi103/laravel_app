@@ -11,7 +11,7 @@
 
 <body>
     <nav class="navbar navbar-light bg-light mb-3">
-        <a class="navbar-brand" href="{{ url("post") }}">Todoリスト</a>
+        <a class="navbar-brand" href="{{ url("posts") }}">Todoリスト</a>
     </nav>
     <div class="container-fluid">
         @yield('content')
