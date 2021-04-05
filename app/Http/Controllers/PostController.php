@@ -40,15 +40,18 @@ class PostController extends Controller
     public function store(Request $request)
     {
       $id = Auth::id();
-    //インスタンス作成
-    $post = new Post();
+      //インスタンス作成
+      $post = new Post();
 
-    $post->title = $request->title;
-    
+      $post->title = $request->title;
 
-    $post->save();
 
-   return redirect()->to('/posts');
+      $post->save();
+
+      return redirect('posts')->with(
+        'status',
+        $post->title . '登録しました！'
+      );
     }
 
     /**
@@ -57,9 +60,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function show(Post $post)
+    public function show($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('post.show', compact('post'));
     }
 
     /**
@@ -68,9 +73,11 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function edit(Post $post)
+    public function edit($id)
     {
-        //
+        $post = Post::find($id);
+
+        return view('post.edit', compact('post'));
     }
 
     /**
@@ -80,9 +87,18 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, $id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->title = $request->input('title');
+
+        $post->save();
+
+        return redirect('posts')->with(
+          'status',
+          $post->title . '更新しました'
+        );
     }
 
     /**
@@ -91,8 +107,15 @@ class PostController extends Controller
      * @param  \App\Post  $post
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        $post = Post::find($id);
+
+        $post->delete();
+
+        return redirect('posts')->with(
+          'status',
+          $post->title . 'を削除しました！'
+        );
     }
 }
