@@ -39,12 +39,16 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+      $rules = [
+          'title' => ['required']
+      ];
+      $this->validate($request, $rules);
+
       $id = Auth::id();
       //インスタンス作成
       $post = new Post();
 
       $post->title = $request->title;
-
 
       $post->save();
 
