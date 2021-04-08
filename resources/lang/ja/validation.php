@@ -13,7 +13,7 @@ return [
   |
   */
 
-  
+
   'accepted' => ':attributeを承認してください。',
   'active_url' => ':attributeに正しいURLを入力してください。',
   'after' => ':attributeは:dateより先の日付を入力してください。',
@@ -149,6 +149,7 @@ return [
   'attributes' => [
     'email' => 'メールアドレス',
     'password' => 'パスワード',
+    'title' => 'タイトル',
   ],
 
 ];

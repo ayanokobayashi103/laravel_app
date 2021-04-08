@@ -40,7 +40,7 @@ class PostController extends Controller
     public function store(Request $request)
     {
       $rules = [
-          'title' => ['required']
+          'title' => ['required', 'max:50']
       ];
       $this->validate($request, $rules);
 
