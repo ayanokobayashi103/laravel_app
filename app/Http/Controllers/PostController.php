@@ -39,8 +39,10 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+      // バリデーション＆error文
       $rules = [
-          'title' => ['required', 'max:50']
+          'title' => ['required', 'max:50'],
+          'part' => ['required', 'max:50'],
       ];
       $this->validate($request, $rules);
 
@@ -49,6 +51,8 @@ class PostController extends Controller
       $post = new Post();
 
       $post->title = $request->title;
+      $post->part = $request->part;
+      $post->user_id = $id;
 
       $post->save();
 
