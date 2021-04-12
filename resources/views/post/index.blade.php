@@ -18,6 +18,8 @@
                         <tr>
                             <th>id</th>
                             <th>title</th>
+                            <th>part</th>
+                            <th>user_id</th>
                             <th></th>
                             <th></th>
                             <th></th>
@@ -28,6 +30,8 @@
                         <tr>
                             <td>{{ $post->id }}</td>
                             <td>{{ $post->title }}</td>
+                            <td>{{ $post->part }}</td>
+                            <td>{{ $post->user_id }}</td>
                             <td><a href="{{ url('posts/' . $post->id) }}" class="btn btn-info">詳細</a></td>
                             <td><a href="{{ url('posts/' . $post->id . '/edit') }}" class="btn btn-primary">編集</a></td>
                             <td>

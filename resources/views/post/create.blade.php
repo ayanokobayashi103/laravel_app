@@ -7,7 +7,7 @@
                 登録画面
             </div>
             <div class="card-body">
-              
+
               @if ($errors->any())
               <div class="alert alert-danger">
                 <ul>
@@ -23,6 +23,10 @@
                     <div class="form-group">
                         <label for="title" class="control-label">タイトル</label>
                         <input class="form-control" name="title" type="text">
+                    </div>
+                    <div class="form-group">
+                        <label for="part" class="control-label">部位</label>
+                        <input class="form-control" name="part" type="text">
                     </div>
                     <button class="btn btn-primary" type="submit">登録</button>
                 </form>
