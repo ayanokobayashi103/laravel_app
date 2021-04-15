@@ -126,4 +126,9 @@ class PostController extends Controller
           $post->title . 'を削除しました！'
         );
     }
+
+    public function search(Request $request)
+    {
+      dd($request ->search);
+    }
 }
