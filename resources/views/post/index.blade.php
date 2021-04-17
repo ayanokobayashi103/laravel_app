@@ -9,10 +9,10 @@
             {{ csrf_field() }}
             <div class="input-group">
               <div class="form-outline">
-                <input type="search" id="form1" class="form-control" name="search">
-                <label class="form-label" for="form1">Search</label>
+                <input type="search" id="form1" class="form-control" name="search" placeholder="search">
+                <label class="form-label" for="form1"></label>
               </div>
-              <button type="submit" class="btn btn-primary">
+              <button type="submit" class="btn btn-primary" style="height: 38px;">
                 <i class="fas fa-search"></i>
               </button>
             </div>
@@ -22,6 +22,10 @@
     </div>
   </div>
 </div>
+
+@if(isset($search_result))
+  <h5 class="card-title">{{ $search_result }}</h5>
+@endisset
 
   <div class="row">
     <div class="col-12">
