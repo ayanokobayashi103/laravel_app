@@ -126,4 +126,22 @@ class PostController extends Controller
           $post->title . 'を削除しました！'
         );
     }
+
+    public function search(Request $request)
+    {
+
+      $posts = Post::where('title', 'like', "%{$request->search}%")
+                ->orWhere('part', 'like', "%{$request->search}%")
+                ->paginate(3);
+
+      $search_result = $request->search.'の検索結果'.count($posts).'件';
+
+      return view('post.index',[
+        // ''左側がviewの表記、右側の変数が展開される中身
+        'posts' => $posts,
+        'search_result' => $search_result,
+      ]);
+
+
+    }
 }
