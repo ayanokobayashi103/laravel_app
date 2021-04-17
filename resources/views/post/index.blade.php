@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-12">
         <div class="card-title">
-          <form action="{{ route('posts.search') }}" method="POST">
+          <form action="{{ route('posts.search') }}" method="get">
             {{ csrf_field() }}
             <div class="input-group">
               <div class="form-outline">
