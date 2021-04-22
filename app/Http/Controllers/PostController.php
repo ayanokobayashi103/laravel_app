@@ -100,6 +100,7 @@ class PostController extends Controller
         $post = Post::find($id);
 
         $post->title = $request->input('title');
+        $post->part = $request->input('part');
 
         $post->save();
 
