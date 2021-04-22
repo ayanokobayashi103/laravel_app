@@ -9,7 +9,7 @@
             {{ csrf_field() }}
             <div class="input-group">
               <div class="form-outline">
-                <input type="search" id="form1" class="form-control" name="search" placeholder="search">
+                <input type="search" id="form1" class="form-control" name="search" placeholder="Search">
                 <label class="form-label" for="form1"></label>
               </div>
               <button type="submit" class="btn btn-primary" style="height: 38px;">
@@ -22,7 +22,7 @@
     </div>
   </div>
 </div>
-
+<div class="container">
 @if(isset($search_result))
   <h5 class="card-title">{{ $search_result }}</h5>
 @endisset
@@ -43,7 +43,7 @@
           <table class="table">
             <thead>
               <tr>
-                <th>id</th>
+                <!-- <th>id</th> -->
                 <th>title</th>
                 <th>part</th>
                 <th>user_id</th>
@@ -55,7 +55,7 @@
             <tbody>
               @foreach($posts as $post)
               <tr>
-                <td>{{ $post->id }}</td>
+                <!-- <td>{{ $post->id }}</td> -->
                 <td>{{ $post->title }}</td>
                 <td>{{ $post->part }}</td>
                 <td>{{ $post->user_id }}</td>
@@ -76,5 +76,5 @@
       </div>
     </div>
   </div>
-
+</div>
 @endsection
