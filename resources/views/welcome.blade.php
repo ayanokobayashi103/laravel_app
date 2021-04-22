@@ -20,10 +20,30 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="{{ asset('css/welcome.css') }}" rel="stylesheet">
-
+    <style>
+    body {
+      width: 100%;
+      height:100%;
+      background-image: url(../images/pexels-julia-larson-6455924.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+     }
+     .head_phrase {
+       margin: 100px 20px;
+       padding-bottom: 5px;
+       margin-bottom: 15px;
+       text-align: center;
+       font-family: unset;
+       font-style: italic;
+       font-weight: bold;
+       color: white;
+       text-shadow: 2px 2px 2px midnightblue;
+     }
+    </style>
 </head>
 
 <body>
